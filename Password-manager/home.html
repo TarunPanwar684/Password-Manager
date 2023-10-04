@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/registration Page</title>
+    <link rel="stylesheet" href="homestyle.css">
+    <!-- <script src="storage.js"></script> -->
+  
+</head>
+<body>
+      <header> 
+        <nav>
+            <div class =" logo"><h1>KeyLok</h1> </div>
+        <img src="logo.png" alt="KeyLok">
+    </nav> 
+   
+         
+    </header>
+
+    <div class="hero">
+        <div class="form-box"> 
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login(event)">Log-In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+            <div class="social-icons">
+                <img src="fb.png">
+                <img src="tw.png">
+                <img src="gp.png">
+            </div>
+            <form id="login" class="input-group">
+                <input type="text" id="login-userid" class="input-field" placeholder="User Id" required>
+                <input type="password" id="login-password" class="input-field" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box">Remember Password
+                <button type="button" class="submit-btn" onclick="login(event)">Log-In</button>
+            </form>
+            
+            <form id="register" class="input-group">
+                <input type="text" id="register-username" class="input-field" placeholder="User Id" required>
+                <input type="email" id="register-email" class="input-field" placeholder="Enter e-mail" required>
+                <input type="password" id="register-password" class="input-field" placeholder="Password" required>
+                <input type="checkbox" class="check-box">I agree to all terms & conditions
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+            <div id="error-message" class="hidden"></div>
+            <div id="success-message" class="hidden"></div>
+        </div>
+    </div>
+    <script>
+        var loginForm = document.getElementById("login");
+        var registerForm = document.getElementById("register");
+        var button = document.getElementById("btn");
+        var errorMessage = document.getElementById("error-message");
+        var successMessage = document.getElementById("success-message");
+
+        function register() {
+            loginForm.style.left = "-400px";
+            registerForm.style.left = "50px";
+            button.style.left = "110px";
+        }
+
+        function redirectToDashboard() {
+            window.location.href = "index.html";
+        }
+        function login(event) {
+            event.preventDefault();
+
+            var userId = document.getElementById("login-userid").value;
+            var password = document.getElementById("login-password").value;
+
+            var storedUsername = localStorage.getItem("username");
+            var storedPassword = localStorage.getItem("password");
+
+            if (userId === storedUsername && password === storedPassword) {
+                // Check if the username and password match the admin credentials
+                if (userId === "tarunsingh" && password === "shashi@123") {
+                    // Store the user role as "admin"
+                    localStorage.setItem("role", "admin");
+
+                    redirectToDashboard();
+                }
+                else{
+                    alert('user does not have passwords');
+                }
+
+                 //redirectToDashboard();
+            } else {
+                errorMessage.innerText = "Invalid login details. Please try again.";
+                errorMessage.classList.remove("hidden");
+            }
+
+            document.getElementById("login-userid").value = "";
+            document.getElementById("login-password").value = "";
+
+            loginForm.style.left = "50px";
+            registerForm.style.left = "450px";
+            button.style.left = "0px";
+            button.style.transform = "translateX(0px)";
+            return false;
+        }
+
+        document.getElementById("register").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var username = document.getElementById("register-username").value;
+            var email = document.getElementById("register-email").value;
+            var password = document.getElementById("register-password").value;
+
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+
+            successMessage.innerText = "Account created successfully. Please log in.";
+            successMessage.classList.remove("hidden");
+            registerForm.classList.add("hidden");
+
+            document.getElementById("register-username").value = "";
+            document.getElementById("register-email").value = "";
+            document.getElementById("register-password").value = "";
+        });
+
+        // After successful login, redirect to the dashboard page
+        
+    </script>
+</body>
+</html>

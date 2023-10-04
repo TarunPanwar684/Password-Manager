@@ -1,0 +1,186 @@
+*{margin: 0;
+    padding: 0;
+ font-family: sans-serif;
+}
+header img {
+  height: 50px;
+  background-color: blue;
+  border-radius: 10px;
+}
+header{
+    /* display: block; */
+    size-adjust: 100px;
+    background-image: linear-gradient(rgba(3, 3, 41, 0.842),rgba(9, 34, 102, 0.603));
+   
+}
+nav{
+    padding:  12px 3px;
+           display: flex;
+    justify-content: space-between;
+}
+.logo{
+    color: #22071aec;
+    font-weight: bolder;
+    width: max-content;
+    height: max-content;
+}
+
+.hero{
+     height: 100%;
+     width: 100%;
+     background-image: linear-gradient(rgba(71, 59, 59, 0),rgba(136, 130, 109, 0.192)),url(BODYBACKGROUND.jpg);
+     background-position: center;
+     background-size: cover;
+     position: absolute;
+}
+.form-box{
+    width: 380px;
+    height: 480px;
+   position: relative;
+   margin: 6% auto;
+   background: #71cada4d;
+   padding: 5px;
+   border-radius: 1%;
+   overflow: hidden;
+}
+.button-box{
+     width: 220px;
+     margin: 40px auto;
+     position: relative;
+     box-shadow: 0 0 20px 9px #e4555593;
+     border-radius:30px;
+    
+
+}
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #e24242, #ffbf3e);
+    border-radius: 30px;
+    transition: transform 0.5s; /* Added transition property */
+}
+
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+   background : rgba(233, 233, 233, 0);
+    border: 0;
+    outline: none;
+    /*border-radius: 80%;*/
+    position: relative;
+    z-index: 1; /* Added z-index to ensure the button is on top */
+}
+
+.toggle-btn:focus {
+    outline: none; /* Added focus style for better accessibility */
+}
+.social-icons{
+    margin: 30 px auto;
+    text-align: center;
+}
+.social-icons img{
+    width: 30px;
+    margin: 0 12px;
+    box-shadow: 0 0 20px 0 #615f5f3d;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.input-group{
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+}
+
+.check-box{
+    margin: 30px 10px 30px 0;
+}
+span{
+    color: #554134;
+    font-size: 25px;
+    bottom: 40px;
+    
+}
+#login{
+    left: 50px;
+}
+#register{
+left: 450px;
+}
+#error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+/* Reset default browser styles */
+
+
+/*/* Basic styling for the container */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Styling for form elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #af4c7af5;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Styling for success message */
+
+.success-message {
+    color: #4caf50;
+    font-weight: bold;
+    margin-top: 10px;
+    display: .5s;
+}
+
+.hidden {
+    display: none;
+}
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
